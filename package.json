@@ -1,6 +1,6 @@
 {
   "name": "gulp-rev-query",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "chang gulp-rev manifest to url query format",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/hingsir/gulp-rev-query#readme",
   "dependencies": {
-    "through2": "^2.0.1"
+    "through2": "^2.0.1",
+    "underscore": "^1.6.0"
   }
 }

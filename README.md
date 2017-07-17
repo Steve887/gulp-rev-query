@@ -2,7 +2,7 @@
 chang gulp-rev manifest to url query format
 
 
-### Usage
+## Usage
 
 * Pipe `revQ()` after `rev.manifest()`
 
@@ -16,7 +16,9 @@ gulp.task('revCss', function() {
         .pipe(gulp.dest('static'))
         .pipe(rev())
         .pipe(rev.manifest())
-        .pipe(revQ('v')) // ?v=xxxxxxxxx
+        .pipe(revQ({
+			ver = 'v'
+		})) 
         .pipe(gulp.dest('static/css'))
 }
 ```
@@ -33,3 +35,32 @@ gulp.task('revCollectorCss', function(){
 })
 
 ```
+
+## API
+
+### revQ()
+
+### revQ([options])
+
+#### options
+
+##### ver
+
+Type: `string`<br>
+Default: `ver`
+
+The query string key to use. Ie. ?ver=xxxxxxxxx
+
+##### prefix
+
+Type: `string`<br>
+Default: `_`
+
+The prefix used to start the revision. Should be equal to `gulp-rev` prefix option.
+
+##### suffix
+
+Type: `string`<br>
+Default: `.`
+
+The suffix used to end the revision. Usually a period `.` to match before the file extension.
